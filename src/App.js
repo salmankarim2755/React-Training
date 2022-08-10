@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import MyButton from "./components/button";
+import Dashboard from "./components/Dashboard";
 
-function App() {
+const App = () => {
+  const render = () => {
+    return (
+      <p>
+        Edit <code>src/App.js</code> and save to reload.
+      </p>
+    );
+  };
+
+  const greet = () => {
+    console.log("hello");
+  };
+
+  const string = "Learn React";
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MyButton name={"increment"} onClick={() => alert("increetn")} />
+
+        <MyButton name={"decrement"} onClick={() => greet("Decreent")} />
+        <Dashboard userName="mark" />
+        <Dashboard userName="julia" />
       </header>
     </div>
   );
-}
+};
 
 export default App;
+
+// parent
